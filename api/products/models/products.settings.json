@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "products",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "costPrice": {
+      "type": "integer"
+    },
+    "supplier": {
+      "via": "products",
+      "model": "supplier"
+    },
+    "brand": {
+      "via": "products",
+      "model": "brands"
+    },
+    "category": {
+      "via": "products",
+      "model": "category"
+    },
+    "stockOnHand": {
+      "type": "integer"
+    },
+    "mainImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "features": {
+      "type": "json"
+    },
+    "related_products": {
+      "collection": "products"
+    },
+    "reviewCount": {
+      "type": "integer"
+    },
+    "ratings": {
+      "type": "decimal"
+    },
+    "reviews": {
+      "via": "product",
+      "collection": "reviews"
+    }
+  }
+}
