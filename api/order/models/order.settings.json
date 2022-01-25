@@ -59,6 +59,9 @@
         "Intellimali",
         "EFT"
       ]
+    },
+    "transactionID": {
+      "type": "string"
     }
   }
 }
