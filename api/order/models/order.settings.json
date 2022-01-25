@@ -46,7 +46,8 @@
       "enum": [
         "pending",
         "paid",
-        "shipped"
+        "shipped",
+        "delivered"
       ]
     },
     "orderItems": {
